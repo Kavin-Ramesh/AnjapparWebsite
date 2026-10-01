@@ -76,7 +76,7 @@ h1 em, h2 em { font-style: italic; text-transform: none; }
 .social-links { display: flex; align-items: center; gap: 13px; margin-top: 21px; }
 .social-links a { display: inline-flex; align-items: center; color: var(--parchment); font-size: 11px; }
 .footer-bottom { display: flex; justify-content: space-between; padding: 17px 0; border-top: 1px solid rgba(216,203,184,.28); color: var(--walnut); font-size: 10px; text-transform: uppercase; }
-.footer-bottom p { margin: 0; }
+.footer-bottom p { margin: 0; text-transform: none; }
 .footer-bottom a:hover { color: var(--parchment); }
 
 /* Home */
