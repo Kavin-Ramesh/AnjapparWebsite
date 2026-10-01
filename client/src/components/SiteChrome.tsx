@@ -117,7 +117,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} Anjappar San Diego</p>
+        <p>Copyright © {new Date().getFullYear()} GeethaRamesh LLC</p>
         <Link href="/PrivacyPolicy">Privacy policy</Link>
       </div>
     </footer>

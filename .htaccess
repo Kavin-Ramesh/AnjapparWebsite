@@ -1,0 +1,31 @@
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Canonical host for anjapparsd.com. Local and preview hosts are left unchanged.
+  RewriteCond %{HTTP_HOST} ^www\.anjapparsd\.com$ [NC]
+  RewriteRule ^ https://anjapparsd.com%{REQUEST_URI} [L,R=301]
+
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP_HOST} ^anjapparsd\.com$ [NC]
+  RewriteRule ^ https://anjapparsd.com%{REQUEST_URI} [L,R=301]
+
+  # Previous site paths, served by the plain HTML files in this folder.
+  RewriteRule ^Food-Menu/?$ food-menu.html [L]
+  RewriteRule ^Menu/?$ food-menu.html [L]
+  RewriteRule ^Catering/?$ catering.html [L]
+  RewriteRule ^catering/?$ catering.html [L]
+  RewriteRule ^Promotions/?$ promotions.html [L]
+  RewriteRule ^PrivacyPolicy/?$ privacy.html [L]
+  RewriteRule ^404/?$ 404.html [L]
+
+  RewriteRule ^sql/ - [F,L]
+  RewriteRule ^api/config\.local\.php$ - [F,L]
+</IfModule>
+
+ErrorDocument 404 /404.html
+
+<Files "config.local.php">
+  Require all denied
+</Files>
